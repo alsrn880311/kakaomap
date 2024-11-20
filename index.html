@@ -15,10 +15,7 @@
         #map {
             width: 100%;
             height: 100%; /* 지도 크기를 전체 화면으로 설정 */
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 2; /* 지도를 최상위로 설정 */
+            position: relative;
         }
         #button-container {
             position: absolute;
@@ -63,8 +60,8 @@
         minLevel: 2 // 클러스터 할 최소 지도 레벨
     });
 
-    // 지도가 성공적으로 로드되었을 때 메시지 박스 표시
-    kakao.maps.event.addListener(map, 'tilesloaded', function() {
+    // 지도가 완벽하게 로드되었을 때 메시지 박스 표시
+    kakao.maps.event.addListener(map, 'idle', function() {
         alert('지도 로드 완료');
     });
 
